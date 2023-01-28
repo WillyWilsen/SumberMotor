@@ -39,7 +39,7 @@ class StockController extends Controller
                         'product_name' => $item->product_name,
                         'current_stock' => $item->current_stock,
                         'total_stock' => $item->total_stock,
-                        'buy_price' => number_format($item->buy_price, 0, '.', ','),
+                        'code' => $item->code,
                         'sell_price' => number_format($item->sell_price, 0, '.', ','),
                         'action' => $buttonList,
                     ];
@@ -59,7 +59,7 @@ class StockController extends Controller
         $stock->product_name = $request->product_name;
         $stock->current_stock = $request->current_stock;
         $stock->total_stock = $request->total_stock;
-        $stock->buy_price = $request->buy_price;
+        $stock->code = $request->code;
         $stock->sell_price = $request->sell_price;
 
         $stock->save();
@@ -82,7 +82,7 @@ class StockController extends Controller
         $find->product_name = $request->product_name;
         $find->current_stock = $request->current_stock;
         $find->total_stock = $request->total_stock;
-        $find->buy_price = $request->buy_price;
+        $find->code = $request->code;
         $find->sell_price = $request->sell_price;
         $find->save();
 

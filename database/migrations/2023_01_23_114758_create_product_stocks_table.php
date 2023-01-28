@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->integer('current_stock');
             $table->integer('total_stock');
-            $table->integer('buy_price');
+            $table->string('code');
             $table->integer('sell_price');
             $table->timestamps();
         });

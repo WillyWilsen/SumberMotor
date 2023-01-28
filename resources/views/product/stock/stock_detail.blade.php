@@ -34,7 +34,7 @@
                 <x-adminlte-input value="{{ $detail['total_stock'] }}" name="total_stock" label="Total Stock"
                     fgroup-class="col-md-6 col-sm-12" />
                 
-                <x-adminlte-input value="{{ $detail['buy_price'] }}" name="buy_price" label="Buy Price"
+                <x-adminlte-input value="{{ $detail['code'] }}" name="code" label="Code"
                     fgroup-class="col-md-6 col-sm-12" />
 
                 <x-adminlte-input value="{{ $detail['sell_price'] }}" name="sell_price" label="Sell Price"

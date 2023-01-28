@@ -33,7 +33,7 @@
                             <th>Name</th>
                             <th>Current Stock</th>
                             <th>Total Stock</th>
-                            <th>Buy Price</th>
+                            <th>Code</th>
                             <th>Sell Price</th>
                             <th>Action</th>
                         </tr>
@@ -73,8 +73,8 @@
                 name: 'total_stock'
             },
             {
-                data: 'buy_price',
-                name: 'buy_price'
+                data: 'code',
+                name: 'code'
             },
             {
                 data: 'sell_price',

@@ -23,7 +23,7 @@
                 <x-adminlte-input name="product_name" label="Product Name" fgroup-class="col-md-6 col-sm-12" />
                 <x-adminlte-input name="current_stock" label="Current Stock" fgroup-class="col-md-6 col-sm-12" />
                 <x-adminlte-input name="total_stock" label="Total Stock" fgroup-class="col-md-6 col-sm-12" />
-                <x-adminlte-input name="buy_price" label="Buy Price" fgroup-class="col-md-6 col-sm-12" />
+                <x-adminlte-input name="code" label="Code" fgroup-class="col-md-6 col-sm-12" />
                 <x-adminlte-input name="sell_price" label="Sell Price" fgroup-class="col-md-6 col-sm-12" />
 
             </div>

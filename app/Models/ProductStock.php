@@ -14,7 +14,7 @@ class ProductStock extends Model
         'product_name',
         'current_stock',
         'total_stock',
-        'buy_price',
+        'code',
         'sell_price'
     ];
 
