@@ -1,42 +1,38 @@
 @extends('adminlte::page')
 
-@section('title', 'Detail Stock')
+@section('title', 'Detail Item')
 
 
 @section('content_header')
     {{-- back button --}}
-    <h1>Stock Detail</h1>
+    <h1>Item Detail</h1>
 
 @stop
 
 @section('content')
     <form action="" method="POST">
         @csrf
-        <input type="hidden" name="id_stock" value="{{ $detail['id'] }}">
+        <input type="hidden" name="id_item" value="{{ $detail['id'] }}">
         <div class="card px-3 py-3">
 
             @include('alert')
             <div class="row mb-3">
                 <div class="col-12 ">
-                    <h5>Stock Data</h5>
+                    <h5>Item Data</h5>
                 </div>
             </div>
             {{-- <div class="row">
-                <x-adminlte-input value="{{ $detail['id'] }}" name="id" label="Stock ID"
+                <x-adminlte-input value="{{ $detail['id'] }}" name="id" label="Item ID"
                     fgroup-class="col-md-6 col-sm-12" disabled />
             </div> --}}
             <div class="row">
-                <x-adminlte-select value="{{ $detail['item_id'] }}" name="item_id" label="Item"
-                    fgroup-class="col-md-6 col-sm-12" class="select2" disabled >
-                    <option value="">Choose Item</option>
-                    @foreach ($list_item as $item)
-                        <option value="{{ $item->id }}" {{ $item->id == $detail['item_id'] ? 'selected' : '' }}>
-                            {{ $item->name }}
-                        </option>
-                    @endforeach
-                </x-adminlte-select>
+                <x-adminlte-input value="{{ $detail['name'] }}" name="name" label="Name"
+                    fgroup-class="col-md-6 col-sm-12" />
                 
-                <x-adminlte-input value="{{ $detail['quantity'] }}" name="quantity" label="Quantity"
+                <x-adminlte-input value="{{ $detail['code'] }}" name="code" label="Code"
+                    fgroup-class="col-md-6 col-sm-12" />
+
+                <x-adminlte-input value="{{ $detail['sell_price'] }}" name="sell_price" label="Sell Price"
                     fgroup-class="col-md-6 col-sm-12" />
             </div>
 

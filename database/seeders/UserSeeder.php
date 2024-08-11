@@ -24,5 +24,13 @@ class UserSeeder extends Seeder
         ]);
 
         $superadmin->assignRole('superadmin');
+
+        $sales = User::create([
+            'email' => 'sales@gmail.com',
+            'name' => 'sales',
+            'password' => Hash::make('sales123'),
+        ]);
+
+        $sales->assignRole('sales');
     }
 }

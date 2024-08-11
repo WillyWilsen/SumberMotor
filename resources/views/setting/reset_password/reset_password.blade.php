@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Add Stock')
+@section('title', 'Reset Password')
 
 
 @section('content_header')
     {{-- back button --}}
-    <h1>Add Stock</h1>
+    <h1>Reset Password</h1>
 
 @stop
 
@@ -14,18 +14,20 @@
         @csrf
         <div class="card px-3 py-3">
 
+            @include('alert')
             <div class="row mb-3">
                 <div class="col-12 ">
-                    <h5>Stock Data</h5>
+                    <h5>Reset Password</h5>
                 </div>
             </div>
             <div class="row">
-                <x-adminlte-input name="product_name" label="Product Name" fgroup-class="col-md-6 col-sm-12" />
-                <x-adminlte-input name="current_stock" label="Current Stock" fgroup-class="col-md-6 col-sm-12" />
-                <x-adminlte-input name="total_stock" label="Total Stock" fgroup-class="col-md-6 col-sm-12" />
-                <x-adminlte-input name="code" label="Code" fgroup-class="col-md-6 col-sm-12" />
-                <x-adminlte-input name="sell_price" label="Sell Price" fgroup-class="col-md-6 col-sm-12" />
-
+                <x-adminlte-input name="current_password" label="Current Password" type="password" fgroup-class="col-md-6 col-sm-12" />
+            </div>
+            <div class="row">
+                <x-adminlte-input name="new_password" label="New Password" type="password" fgroup-class="col-md-6 col-sm-12" />
+            </div>
+            <div class="row">
+                <x-adminlte-input name="confirm_password" label="Confirm Password" type="password" fgroup-class="col-md-6 col-sm-12" />
             </div>
 
             <div class="row justify-content-end">

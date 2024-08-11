@@ -1,9 +1,9 @@
 @extends('adminlte::page')
-@section('title', 'Stock')
+@section('title', 'Log')
 
 @section('content_header')
     <div class="container-fluid">
-        <h1>Stock</h1>
+        <h1>Log</h1>
 
     </div>
 @stop
@@ -14,8 +14,8 @@
             {{-- add button  align right --}}
             <div class="card-header">
                 <div class="float-right">
-                    {{-- <a href="{{ route('product.stock.create') }}"><button class="btn btn-primary">Add</button></a> --}}
-                    {{-- <form action="{{ route('product.stock.import') }}" method="POST" enctype="multipart/form-data">
+                    {{-- <a href="{{ route('log.create') }}"><button class="btn btn-primary">Add</button></a> --}}
+                    {{-- <form action="{{ route('log.import') }}" method="POST" enctype="multipart/form-data">
                         @csrf --}}
                     {{-- <div style="display: none;">
                         <x-adminlte-input-file id="csv_upload" name="file" onchange="importExcel(this.files[0])" />
@@ -30,12 +30,9 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
-                            @if (auth()->user()->can('product-stock-admin'))
-                                <th>Action</th>
-                            @endif
+                            <th>Message</th>
+                            <th>Created By</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,26 +58,18 @@
                 name: 'DT_RowIndex'
             },
             {
-                data: 'item_name',
-                name: 'item_name'
+                data: 'message',
+                name: 'message'
             },
             {
-                data: 'quantity',
-                name: 'quantity'
+                data: 'created_by',
+                name: 'created_by'
             },
             {
-                data: 'total_price',
-                name: 'total_price'
+                data: 'date',
+                name: 'date'
             },
         ]
-        @if (auth()->user()->can('product-stock-admin'))
-            columns.push({
-                data: 'action',
-                name: 'action',
-                orderable: false,
-                searchable: false
-            })
-        @endif
 
         function refreshDatatable() {
             $('.datatable').DataTable().ajax.reload();
@@ -92,7 +81,7 @@
                 processing: true,
                 serverSide: true,
                 responsive: true,
-                ajax: "{{ route('product.stock.list') }}",
+                ajax: "{{ route('log.list') }}",
                 columns: columns,
             });
         }
@@ -103,9 +92,9 @@
         });
     </script>
     @include('js_template.delete', [
-        'deleteRoute' => route('product.stock.delete', ':id'),
+        'deleteRoute' => route('log.delete', ':id'),
     ])
     {{-- @include('js_template.csv', [
-        'importRoute' => route('product.stock.import'),
+        'importRoute' => route('log.import'),
     ]) --}}
 @stop

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
+use App\Models\Stock;
+use App\Models\Transaction;
 // use App\Models\SusbaBank;
 // use App\Models\SusbaCountry;
 // use App\Models\SusbaIndicator;
@@ -32,8 +34,19 @@ class ProductDashboard extends Controller
         // $expected_answer = $expected_esg + $expected_sector;
 
         // $count_indicator_answer = SusbaIndicatorAnswer::count();
+        $sum_stock = number_format(
+            Stock::join('items', 'stocks.item_id', '=', 'items.id')
+                ->selectRaw('SUM(stocks.quantity * items.sell_price) as total')
+                ->value('total'), 0, '.', ','
+        );
+        $sum_transaction = number_format(Transaction::sum('total_price'), 0, '.', ',');
+        $sum_transaction_today = number_format(Transaction::whereDate('created_at', date('Y-m-d'))->sum('total_price'), 0, '.', ',');
 
-        return view('product.dashboard');
+        return view('product.dashboard', compact(
+            'sum_stock', 
+            'sum_transaction', 
+            'sum_transaction_today'
+        ));
     }
     // public function DownloadCsvExample()
     // {

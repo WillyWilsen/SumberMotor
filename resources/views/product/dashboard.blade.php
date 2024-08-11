@@ -15,16 +15,46 @@
 
             <a target="_blank" href="{{ route('respond.csv_example') }}" class="btn btn-primary ml-2">Download CSV Example</a>
         </div> --}}
-        {{-- <div class="row mt-5">
+        <div class="row mt-5">
             <h4>Data Summary</h4>
         </div>
         <div class="row mt-2">
-            <x-dashboard-card backgroundColor="bg-light" :total="$count_region" title="Region" />
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h5 class="card-title">Total Stock Price</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center">{{ $sum_stock }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h5 class="card-title">Total Transaction Price</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center">{{ $sum_transaction }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h5 class="card-title">Today Transaction Price</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center">{{ $sum_transaction_today }}</h3>
+                    </div>
+                </div>
+            </div>
+            {{-- <x-dashboard-card backgroundColor="bg-light" :total="$count_region" title="Region" />
             <x-dashboard-card backgroundColor="bg-light" :total="$count_country" title="Country" />
             <x-dashboard-card backgroundColor="bg-light" :total="$count_bank" title="Bank" />
-            <x-dashboard-card backgroundColor="bg-light" :total="$count_indicator_answer" title="Indicator Answer" />
+            <x-dashboard-card backgroundColor="bg-light" :total="$count_indicator_answer" title="Indicator Answer" /> --}}
 
-        </div> --}}
+        </div>
     </div>
 @stop
 

@@ -16,6 +16,7 @@ class AuthController extends Controller
 
             $rolesToRoute = [
                 'superadmin' => 'product.dashboard',
+                'sales' => 'product.dashboard',
             ];
             $mainRole = Auth()->user()->getRoleNames()->first();
             return redirect()->route($rolesToRoute[$mainRole]);
@@ -32,6 +33,7 @@ class AuthController extends Controller
             $mainRole = auth()->user()->getRoleNames()[0];
             $rolesToRoute = [
                 'superadmin' => 'product.dashboard',
+                'sales' => 'product.dashboard',
             ];
             return redirect()->route($rolesToRoute[$mainRole]);
         }

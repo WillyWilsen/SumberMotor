@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Sumber</b>Motor',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'product',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => false,
@@ -308,14 +308,46 @@ return [
                 [
                     'text' => 'Dashboard',
                     'icon'    => '',
-                    'url'  => 'admin/product',
+                    'url'  => 'product',
+                    'shift' => 'ml-3',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Item',
+                    'icon'    => '',
+                    'url'  => 'product/item',
                     'shift' => 'ml-3',
                     'label_color' => 'success',
                 ],
                 [
                     'text' => 'Stock',
                     'icon'    => '',
-                    'url'  => 'admin/product/stock',
+                    'url'  => 'product/stock',
+                    'shift' => 'ml-3',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Transaction',
+                    'icon'    => '',
+                    'url'  => 'product/transaction',
+                    'shift' => 'ml-3',
+                    'label_color' => 'success',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Log',
+            'icon'    => '',
+            'url'  => 'log',
+        ],
+        [
+            'text'    => 'Setting',
+            'icon'    => '',
+            'submenu' => [
+                [
+                    'text' => 'Reset Password',
+                    'icon'    => '',
+                    'url'  => 'setting/reset_password',
                     'shift' => 'ml-3',
                     'label_color' => 'success',
                 ],
