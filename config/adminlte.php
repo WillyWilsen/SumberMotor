@@ -301,6 +301,20 @@ return [
             'topnav_right' => true,
         ],
         [
+            'text'    => 'Master',
+            'icon'    => '',
+            'can' => 'master-admin',
+            'submenu' => [
+                [
+                    'text' => 'User',
+                    'icon'    => '',
+                    'url'  => 'master/user',
+                    'shift' => 'ml-3',
+                    'label_color' => 'success',
+                ],
+            ],
+        ],
+        [
             'text'    => 'Product',
             'icon'    => '',
             'can' => 'product-admin',

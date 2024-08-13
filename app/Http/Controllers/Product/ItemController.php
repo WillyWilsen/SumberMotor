@@ -47,19 +47,6 @@ class ItemController extends Controller
                             'sell_price' => number_format($item->sell_price, 0, '.', ','),
                         ];
                     }
-                    // $editUrl = route('product.item.edit', $item->id);
-                    // $editButton = '<a href="' . $editUrl . '" class="edit btn btn-success btn-sm">Edit</a>';
-                    // // delete button with onclick event
-
-                    // $deleteButton = '<button class="delete btn btn-danger btn-sm" onclick="deleteData(' . $item->id . ' )">Delete</button>';
-
-                    // $buttonList = $editButton . ' ' . $deleteButton;
-                    // return [
-                    //     'id' => $item->id,
-                    //     'name' => $item->name,
-                    //     'sell_price' => number_format($item->sell_price, 0, '.', ','),
-                    //     'action' => $buttonList,
-                    // ];
                 })
                 ->make(true);
         }

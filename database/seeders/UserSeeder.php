@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'andi@gmail.com',
             'name' => 'andi',
             'password' => Hash::make('andi123'),
+            'role' => 'superadmin',
         ]);
 
         $superadmin->assignRole('superadmin');
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
             'email' => 'dev@gmail.com',
             'name' => 'dev',
             'password' => Hash::make('dev123'),
+            'role' => 'superadmin',
         ]);
 
         $dev->assignRole('superadmin');
@@ -37,6 +39,7 @@ class UserSeeder extends Seeder
             'email' => 'sales@gmail.com',
             'name' => 'sales',
             'password' => Hash::make('sales123'),
+            'role' => 'sales',
         ]);
 
         $sales->assignRole('sales');

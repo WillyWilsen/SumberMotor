@@ -16,6 +16,7 @@ class RoleAndPermissionSeeder extends Seeder
      */
     public function run()
     {
+        Permission::create(['name' => 'master-admin']);
         Permission::create(['name' => 'product-admin']);
         Permission::create(['name' => 'product-item-admin']);
         Permission::create(['name' => 'product-stock-admin']);
@@ -24,11 +25,20 @@ class RoleAndPermissionSeeder extends Seeder
         Role::create([
             'name' => 'sales',
             'guard_name' => 'web'
-        ])->givePermissionTo(['product-admin', 'product-transaction-admin']);
+        ])->givePermissionTo([
+            'product-admin',
+            'product-transaction-admin'
+        ]);
 
         Role::create([
             'name' => 'superadmin',
             'guard_name' => 'web'
-        ])->givePermissionTo(['product-admin', 'product-item-admin', 'product-stock-admin', 'product-transaction-admin']);
+        ])->givePermissionTo([
+            'master-admin',
+            'product-admin',
+            'product-item-admin',
+            'product-stock-admin',
+            'product-transaction-admin'
+        ]);
     }
 }

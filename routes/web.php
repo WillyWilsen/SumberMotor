@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Master\UserController as MasterUserController;
 use App\Http\Controllers\Product\ProductDashboard;
 use App\Http\Controllers\Product\ItemController as ProductItemController;
 use App\Http\Controllers\Product\TransactionController as ProductTransactionController;
@@ -25,6 +26,24 @@ Route::post('login', [AuthController::class, 'Login']);
 Route::post('logout', [AuthController::class, 'Logout']);
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['permission:master-admin']], function () {
+        Route::prefix('master')->group(function () {
+            Route::prefix('user')->group(function () {
+                Route::get("", [MasterUserController::class, 'index'])->name('master.user.index');
+                Route::get('/data', [MasterUserController::class, 'GetData'])->name("master.user.list");
+
+                Route::get('/add', [MasterUserController::class, 'Create'])->name("master.user.create");
+                Route::post('/add', [MasterUserController::class, 'CreateSubmit'])->name("master.user.create_submit");
+                // Route::post('/import', [MasterUserController::class, 'Import'])->name('master.user.import');
+
+                Route::get('/{id}', [MasterUserController::class, 'Update'])->name("master.user.edit");
+                Route::post('/{id}', [MasterUserController::class, 'UpdateSubmit'])->name('master.user.edit_submit');
+
+                Route::delete('/{id}', [MasterUserController::class, 'Delete'])->name('master.user.delete');
+            });
+        });
+    });
+        
     Route::group(['middleware' => ['permission:product-admin']], function () {
         Route::prefix('product')->group(function () {
             Route::get('', [ProductDashboard::class, 'index'])->name('product.dashboard');
