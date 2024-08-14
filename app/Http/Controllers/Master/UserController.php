@@ -28,20 +28,30 @@ class UserController extends Controller
                 ->addIndexColumn()
                 ->rawColumns(['action'])
                 ->setTransformer(function ($user) {
-                    $editUrl = route('master.user.edit', $user->id);
-                    $editButton = '<a href="' . $editUrl . '" class="edit btn btn-success btn-sm">Edit</a>';
-                    // delete button with onclick event
+                    if ($user->id == auth()->user()->id) {
+                        return [
+                            'id' => $user->id,
+                            'name' => $user->name,
+                            'email' => $user->email,
+                            'role' => $user->role,
+                            'action' => '',
+                        ];
+                    } else {
+                        $editUrl = route('master.user.edit', $user->id);
+                        $editButton = '<a href="' . $editUrl . '" class="edit btn btn-success btn-sm">Edit</a>';
+                        // delete button with onclick event
 
-                    $deleteButton = '<button class="delete btn btn-danger btn-sm" onclick="deleteData(' . $user->id . ' )">Delete</button>';
+                        $deleteButton = '<button class="delete btn btn-danger btn-sm" onclick="deleteData(' . $user->id . ' )">Delete</button>';
 
-                    $buttonList = $editButton . ' ' . $deleteButton;
-                    return [
-                        'id' => $user->id,
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'role' => $user->role,
-                        'action' => $buttonList,
-                    ];
+                        $buttonList = $editButton . ' ' . $deleteButton;
+                        return [
+                            'id' => $user->id,
+                            'name' => $user->name,
+                            'email' => $user->email,
+                            'role' => $user->role,
+                            'action' => $buttonList,
+                        ];
+                    }
                 })
                 ->make(true);
         }
