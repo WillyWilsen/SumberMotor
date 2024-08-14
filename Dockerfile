@@ -31,8 +31,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install
 
 # Set correct permissions for storage and cache directories
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+RUN sudo chown -R www-data:www-data /var/www/html/storage/logs
+RUN sudo chmod -R 775 /var/www/html/storage/logs
 
 # Expose port 80 for Apache
 EXPOSE 80
