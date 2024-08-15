@@ -1,9 +1,9 @@
 @extends('adminlte::page')
-@section('title', 'Item')
+@section('title', 'User')
 
 @section('content_header')
     <div class="container-fluid">
-        <h1>Item</h1>
+        <h1>User</h1>
 
     </div>
 @stop
