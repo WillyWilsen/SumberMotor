@@ -31,6 +31,7 @@
                         <tr>
                             <th>No</th>
                             <th>Item Name</th>
+                            <th>Item Brand/Type</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
                             @if (auth()->user()->can('product-stock-admin'))
@@ -63,6 +64,10 @@
             {
                 data: 'item_name',
                 name: 'item_name'
+            },
+            {
+                data: 'item_type',
+                name: 'item_type'
             },
             {
                 data: 'quantity',

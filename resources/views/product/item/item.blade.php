@@ -35,6 +35,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Brand/Type</th>
                             <th>Sell Price</th>
                             @if (auth()->user()->can('product-item-admin'))
                                 <th>Action</th>
@@ -66,6 +67,10 @@
             {
                 data: 'name',
                 name: 'name'
+            },
+            {
+                data: 'type',
+                name: 'type'
             },
             {
                 data: 'sell_price',

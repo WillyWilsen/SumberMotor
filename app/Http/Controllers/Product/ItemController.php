@@ -37,6 +37,7 @@ class ItemController extends Controller
                         return [
                             'id' => $item->id,
                             'name' => $item->name,
+                            'type' => $item->type,
                             'sell_price' => number_format($item->sell_price, 0, '.', ','),
                             'action' => $buttonList,
                         ];
@@ -44,6 +45,7 @@ class ItemController extends Controller
                         return [
                             'id' => $item->id,
                             'name' => $item->name,
+                            'type' => $item->type,
                             'sell_price' => number_format($item->sell_price, 0, '.', ','),
                         ];
                     }
@@ -61,6 +63,8 @@ class ItemController extends Controller
     {
         if (!$request->name) {
             return redirect()->back()->with('error', 'Name must be filled');
+        } else if (!$request->type) {
+            return redirect()->back()->with('error', 'Brand/Type must be filled');
         } else if (!$request->code) {
             return redirect()->back()->with('error', 'Code must be filled');
         } else if (!$request->sell_price) {
@@ -69,6 +73,7 @@ class ItemController extends Controller
 
         $item = new Item();
         $item->name = $request->name;
+        $item->type = $request->type;
         $item->code = $request->code;
         $item->sell_price = $request->sell_price;
 
@@ -100,6 +105,8 @@ class ItemController extends Controller
     {
         if (!$request->name) {
             return redirect()->back()->with('error', 'Name must be filled');
+        } else if (!$request->type) {
+            return redirect()->back()->with('error', 'Brand/Type must be filled');
         } else if (!$request->code) {
             return redirect()->back()->with('error', 'Code must be filled');
         } else if (!$request->sell_price) {
@@ -116,6 +123,7 @@ class ItemController extends Controller
         $log->save();
 
         $find->name = $request->name;
+        $find->type = $request->type;
         $find->code = $request->code;
         $find->sell_price = $request->sell_price;
         $find->save();

@@ -38,6 +38,7 @@ class StockController extends Controller
                         return [
                             'id' => $stock->id,
                             'item_name' => $stock->item->name,
+                            'item_type' => $stock->item->type,
                             'quantity' => number_format($stock->quantity, 0, '.', ','),
                             'total_price' => number_format($stock->quantity * $stock->Item->sell_price, 0, '.', ','),
                             'action' => $buttonList,
@@ -46,6 +47,7 @@ class StockController extends Controller
                         return [
                             'id' => $stock->id,
                             'item_name' => $stock->item->name,
+                            'item_type' => $stock->item->type,
                             'quantity' => number_format($stock->quantity, 0, '.', ','),
                             'total_price' => number_format($stock->quantity * $stock->Item->sell_price, 0, '.', ','),
                         ];

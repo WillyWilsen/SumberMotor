@@ -22,6 +22,7 @@
             </div>
             <div class="row">
                 <x-adminlte-input name="name" label="Name" fgroup-class="col-md-6 col-sm-12" />
+                <x-adminlte-input name="type" label="Brand/Type" fgroup-class="col-md-6 col-sm-12" />
                 <x-adminlte-input name="code" label="Code" fgroup-class="col-md-6 col-sm-12" />
                 <x-adminlte-input name="sell_price" label="Sell Price" fgroup-class="col-md-6 col-sm-12" />
 

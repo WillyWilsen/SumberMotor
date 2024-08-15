@@ -28,6 +28,9 @@
             <div class="row">
                 <x-adminlte-input value="{{ $detail['name'] }}" name="name" label="Name"
                     fgroup-class="col-md-6 col-sm-12" />
+
+                <x-adminlte-input value="{{ $detail['type'] }}" name="type" label="Brand/Type"
+                    fgroup-class="col-md-6 col-sm-12" />
                 
                 <x-adminlte-input value="{{ $detail['code'] }}" name="code" label="Code"
                     fgroup-class="col-md-6 col-sm-12" />

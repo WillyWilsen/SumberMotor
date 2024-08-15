@@ -63,8 +63,9 @@ return [
     |
     */
 
-    'logo' => '<b>Sumber</b>Motor',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Sumber Motor</b>',
+    // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'https://th.bing.com/th/id/OIP.pgISQehJf2IvR-prEsmVPAHaEc?w=299&h=180&c=7&r=0&o=5&dpr=2&pid=1.7',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
