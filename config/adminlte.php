@@ -65,7 +65,7 @@ return [
 
     'logo' => '<b>Sumber Motor</b>',
     // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img' => 'https://th.bing.com/th/id/OIP.pgISQehJf2IvR-prEsmVPAHaEc?w=299&h=180&c=7&r=0&o=5&dpr=2&pid=1.7',
+    'logo_img' => 'https://th.bing.com/th?id=OIP.33Y3dyiQ_VczBxjHie4WwwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -154,7 +154,7 @@ return [
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -168,11 +168,11 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
-    'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
+    'classes_auth_card' => 'card-outline card-dark',
+    'classes_auth_header' => 'bg-dark',
+    'classes_auth_body' => 'bg-dark',
+    'classes_auth_footer' => 'bg-dark',
+    'classes_auth_icon' => 'bg-dark',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
@@ -195,7 +195,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
