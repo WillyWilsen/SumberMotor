@@ -39,8 +39,10 @@ class StockController extends Controller
                             'id' => $stock->id,
                             'item_name' => $stock->item->name,
                             'item_type' => $stock->item->type,
+                            'item_code' => $stock->item->code,
+                            'item_sell_price' => number_format($stock->item->sell_price, 0, '.', ','),
                             'quantity' => number_format($stock->quantity, 0, '.', ','),
-                            'total_price' => number_format($stock->quantity * $stock->Item->sell_price, 0, '.', ','),
+                            'total_price' => number_format($stock->quantity * $stock->item->sell_price, 0, '.', ','),
                             'action' => $buttonList,
                         ];
                     } else {
@@ -48,8 +50,10 @@ class StockController extends Controller
                             'id' => $stock->id,
                             'item_name' => $stock->item->name,
                             'item_type' => $stock->item->type,
+                            'item_code' => $stock->item->code,
+                            'item_sell_price' => number_format($stock->item->sell_price, 0, '.', ','),
                             'quantity' => number_format($stock->quantity, 0, '.', ','),
-                            'total_price' => number_format($stock->quantity * $stock->Item->sell_price, 0, '.', ','),
+                            'total_price' => number_format($stock->quantity * $stock->item->sell_price, 0, '.', ','),
                         ];
                     }
                 })

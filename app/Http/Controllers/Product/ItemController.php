@@ -38,6 +38,7 @@ class ItemController extends Controller
                             'id' => $item->id,
                             'name' => $item->name,
                             'type' => $item->type,
+                            'code' => $item->code,
                             'sell_price' => number_format($item->sell_price, 0, '.', ','),
                             'action' => $buttonList,
                         ];
@@ -46,6 +47,7 @@ class ItemController extends Controller
                             'id' => $item->id,
                             'name' => $item->name,
                             'type' => $item->type,
+                            'code' => $item->code,
                             'sell_price' => number_format($item->sell_price, 0, '.', ','),
                         ];
                     }

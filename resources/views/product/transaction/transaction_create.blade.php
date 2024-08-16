@@ -46,7 +46,7 @@
                       <option value="">Choose Item</option>
                       @foreach ($list_item as $item)
                           <option value="{{ $item->id }}">
-                              {{ $item->name }}
+                              {{ $item->name }}: {{ $item->type }}
                           </option>
                       @endforeach
                 </x-adminlte-select>
