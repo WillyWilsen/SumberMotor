@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<span style="font-weight: 600; color: black;">Sumber Motor</span>',
+    'logo' => '<span style="font-weight: 600;">Sumber Motor</span>',
     // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img' => 'https://th.bing.com/th?id=OIP.33Y3dyiQ_VczBxjHie4WwwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2',
     'logo_img_class' => 'brand-image img-circle elevation-3',
