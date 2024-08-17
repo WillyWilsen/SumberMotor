@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'index'])->name("login");
 Route::post('login', [AuthController::class, 'Login']);
 Route::post('logout', [AuthController::class, 'Logout']);
+Route::get('password/reset', [AuthController::class, 'ResetPassword']);
+Route::post('password/email', [AuthController::class, 'SendEmailResetPassword']);
+Route::get('password/reset/{token}', [AuthController::class, 'VerifyResetPassword']);
+Route::post('password/reset', [AuthController::class, 'ResetPasswordSubmit']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['permission:master-admin']], function () {
